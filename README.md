@@ -1,5 +1,5 @@
 # BlockChain_Sample
-This is a simple example using Block Chain concept for learning purposes.
+This is a simple example using Block Chain concept for learning purposes using Node JS.
 
 # Packages Needed
  - Crypto-js (npm install crypto-js)
