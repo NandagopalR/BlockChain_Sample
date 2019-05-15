@@ -2,8 +2,7 @@
 This is a simple example using Block Chain concept for learning purposes.
 
 # Packages Needed
- - Crypto-js
-     Command - npm install crypto-js
+ - Crypto-js (npm install crypto-js)
     
 # Output
   
