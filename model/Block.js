@@ -4,26 +4,26 @@ const SHA = require("crypto-js/sha256")
 class Block {
 
     constructor(timestamp, data, prevHash) {
-        this.index = generateIndex()
+        this.index = this.generateIndex(10)
         this.timestamp = timestamp
         this.data = data
-        this.prevHash = prevHash
+        this.previousHash = prevHash
         this.hash = this.generateHash()
         this.nonce = 0
     }
 
-    generateIndex() {
+    generateIndex(length) {
         var result = ""
         var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYSabcdefghijklmnopqrstuvwxyz0123456789"
         var charLength = characters.length
-        for (var i = 0; i < charLength; i++) {
-            result += characters.charAt(Math.floor(i * charLength))
+        for (var i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() * charLength))
         }
         return result
     }
 
     generateHash() {
-        return SHA(timestamp + JSON.stringify(data) + prevHash).toString
+        return SHA(this.timestamp + JSON.stringify(this.data) + this.prevHash).toString()
     }
 
 }
